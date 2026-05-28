@@ -1,0 +1,42 @@
+name: NexAdmin
+version: 1.0.0
+description: Advanced Admin Panel Plugin for Spigot 1.21.11
+author: hex44444
+main: com.nexadmin.NexAdminPlugin
+api-version: 1.21
+
+softdepend:
+  - LuckPerms
+  - Vault
+
+commands:
+  nexadmin:
+    description: Open NexAdmin GUI Panel
+    usage: /nexadmin
+    permission: nexadmin.command
+  teleportplayer:
+    description: Teleport to a player
+    usage: /teleportplayer <player>
+    permission: nexadmin.teleport
+  playerinfo:
+    description: View player information
+    usage: /playerinfo <player>
+    permission: nexadmin.playerinfo
+
+permissions:
+  nexadmin.command:
+    description: Access NexAdmin panel
+    default: op
+  nexadmin.teleport:
+    description: Teleport to players
+    default: op
+  nexadmin.playerinfo:
+    description: View player information
+    default: op
+  nexadmin.admin:
+    description: Full admin access
+    default: op
+    children:
+      nexadmin.command: true
+      nexadmin.teleport: true
+      nexadmin.playerinfo: true
